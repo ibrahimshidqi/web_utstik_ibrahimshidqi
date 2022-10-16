@@ -1,0 +1,37 @@
+Table dosen {
+  id int [pk]
+  NIP varchar
+  nama_dosen varchar
+  jabatan varchar
+  email varchar
+ }
+ 
+Table mahasiswa {
+  id int [pk]
+  NIM varchar
+  nama_mahasiswa varchar
+  semester varchar
+  email varchar
+}
+
+Table penelitian {
+  id int [pk]
+  tahun_akademik varchar
+  judul_penelitian varchar
+  nama_ketua_tim varchar
+  kepakaran_ketua_tim varchar
+  nama_dan_identitas_dosen_anggota_penelitian varchar
+  nama_dan_identitas_mahasiswa_yang_dilibatkan varchar
+}
+
+Ref: "dosen"."id" < "mahasiswa"."id"
+
+Ref: "dosen"."id" < "penelitian"."id"
+
+Ref: "penelitian"."nama_ketua_tim" < "dosen"."nama_dosen"
+
+Ref: "penelitian"."nama_dan_identitas_dosen_anggota_penelitian" < "dosen"."nama_dosen"
+
+Ref: "penelitian"."nama_dan_identitas_mahasiswa_yang_dilibatkan" < "mahasiswa"."nama_mahasiswa"
+
+Ref: "penelitian"."tahun_akademik" < "mahasiswa"."semester"

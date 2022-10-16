@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <center>
+    <h1>Pendidikan Matematika</h1>
+    </center>
+    <center>
+        <img src="{% static 'images/sindang.png' %}" alt="foto" width="400px">
+    </center>
+    <h2>Penelitian</h2>
+    <table class="table table-success table-striped">
+        <tr>
+            <th>Tahun Akademik</th>
+            <th>Judul Penelitian</th>
+            <th>Nama Ketua Tim</th>
+            <th>Kepakaran Ketua Tim</th>
+            <th>Nama dan Identitas Dosen Anggota Penelitian</th>
+            <th>Nama dan Identitas Mahasiswa yang dilibatkan</th>
+        </tr>
+        {% for penelitian in dataPenelitian %}
+        <tr>
+            <td>{{ penelitian.tahun_akademik }}</td>
+            <td>{{ penelitian.judul_penelitian }}</td>
+            <td>{{ penelitian.nama_ketua_tim }}</td>
+            <td>{{ penelitian.kepakaran_ketua_tim }}</td>
+            <td>{{ penelitian.nama_dan_identitas_dosen_anggota_penelitian }}</td>
+            <td>{{ penelitian.nama_dan_identitas_mahasiswa_yang_dilibatkan }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <center>
+    <h1>Pendidikan Matematika</h1>
+    </center>
+    <center>
+        <img src="{% static 'images/sindang.png' %}" alt="foto" width="400px">
+    </center>
+    <h2>Dosen Pendidikan Matematika</h2>
+    <table class="table table-success table-striped">
+        <tr>
+            <th>NIP</th>
+            <th>Nama</th>
+            <th>Jabatan</th>
+            <th>Email</th>
+        </tr>
+        {% for dosen in dataDosen %}
+        <tr>
+            <td>{{ dosen.NIP }}</td>
+            <td>{{ dosen.nama }}</td>
+            <td>{{ dosen.jabatan }}</td>
+            <td>{{ dosen.email }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

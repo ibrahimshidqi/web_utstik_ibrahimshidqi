@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <center>
+    <h1>Pendidikan Matematika</h1>
+    </center>
+    <center>
+        <img src="{% static 'images/sindang.png' %}" alt="foto" width="400px">
+    </center>
+    <h2>Visi Keilmuan</h2>
+    <center>
+    <h4>Visi Keilmuan</h4>
+    </center>
+    <center>
+    <p>Menghasilkan calon pendidik di bidang pendidikan matematika yang unggul, berkarakter dan berdaya saing di Kawasan ASEAN tahun 2030</p>
+    </center>
+    <center>
+        <h4>Tujuan</h4>
+    </center>
+    {% for judul in judul %}
+        <li>{{ judul }}</li>
+    {% endfor %}
+
+{% endblock %}
